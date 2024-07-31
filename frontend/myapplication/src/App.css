@@ -2,6 +2,29 @@
   text-align: center;
 }
 
+/* src/styles.css */
+.App {
+  height: 100vh;
+}
+
+.login-form {
+  max-width: 400px; /* Adjust as needed */
+  width: 100%;
+}
+
+.login-form .form-group {
+  margin-bottom: 1rem; /* Adjust as needed */
+}
+
+.login-form .form-control {
+  margin-bottom: 1rem; /* Adjust as needed */
+}
+
+.login-form .btn {
+  margin-top: 1rem; /* Adjust as needed */
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
