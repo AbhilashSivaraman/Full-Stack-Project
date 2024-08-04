@@ -30,6 +30,23 @@
   pointer-events: none;
 }
 
+.sign-up-form {
+  max-width: 400px; /* Adjust as needed */
+  width: 100%;
+}
+
+.sign-up-form .form-group {
+  margin-bottom: 1rem; /* Adjust as needed */
+}
+
+.sign-up-form .form-control {
+  margin-bottom: 1rem; /* Adjust as needed */
+}
+
+.sign-up-form .btn {
+  margin-top: 1rem; /* Adjust as needed */
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

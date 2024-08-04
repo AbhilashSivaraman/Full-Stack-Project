@@ -1,29 +1,27 @@
-// src/components/LoginForm.js
+// src/components/SignUpForm.js
 import React, { useState } from 'react';
 import { Button, Form, Container } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
-import { login } from '../services/authService';
+import { Link } from 'react-router-dom';
+import { register } from '../services/authService';
 
-const LoginForm = () => {
+const SignUpForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate();
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         try {
-            await login(username, password);
-            navigate('/');
+            await register(username, password);
+            // Optionally redirect to login or show a success message
         } catch (error) {
-            alert('Invalid credentials');
+            console.error('Registration error:', error);
         }
     };
 
     return (
         <Container className="d-flex justify-content-center align-items-center min-vh-100">
-            <div className="login-form">
-                <h2 className="text-center mb-4">Login</h2>
+            <div className="sign-up-form">
+                <h2 className="text-center mb-4">Sign Up</h2>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="formBasicUsername">
                         <Form.Label>Username</Form.Label>
@@ -48,10 +46,10 @@ const LoginForm = () => {
                     </Form.Group>
 
                     <Button variant="primary" type="submit" className="w-100">
-                        Login
+                        Sign Up
                     </Button>
                     <div className="mt-3 text-center">
-                        <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
+                        <p>Already have an account? <Link to="/login">Login</Link></p>
                     </div>
                 </Form>
             </div>
@@ -59,4 +57,4 @@ const LoginForm = () => {
     );
 };
 
-export default LoginForm;
+export default SignUpForm;
